@@ -1,25 +1,25 @@
 <template>
-  <a-layout-header style="background: #fff; padding: 0" class="barra">
+  <a-layout-header style="padding: 0" class="barra">
     <!-- buscador -->
 
     <a-row class="buscador" align="middle">
-      <a-input-search v-model:value="value" placeholder="Buscar"/>
+      <a-input-search v-model:value="value" placeholder="Buscar" />
     </a-row>
     <a-row class="avatar" :span="10" align="middle" justify="end">
-      <a-switch v-model:checked="checked2" checked-children="Oscuro" un-checked-children="Claro" />
-      <a-dropdown-button>
+      <a-switch checked-children="Oscuro" un-checked-children="Claro" class="color" />
+      <a-dropdown-button class="space">
         <template #overlay>
-          <a-menu @click="handleMenuClick">
+          <a-menu @click="handleMenuClick" theme="dark">
             <a-menu-item key="1">
-              <UserOutlined />
+              <EditOutlined />
               Editar perfil
             </a-menu-item>
             <a-menu-item key="2">
-              <UserOutlined />
+              <SettingOutlined />
               Ajustes
             </a-menu-item>
             <a-menu-item key="3">
-              <UserOutlined />
+              <LogoutOutlined />
               Salir
             </a-menu-item>
           </a-menu>
@@ -34,11 +34,13 @@
 <script setup>
 import {
   UserOutlined,
+  EditOutlined,
+  SettingOutlined,
+  LogoutOutlined
 
 } from "@ant-design/icons-vue";
 import { ref } from "vue";
 const value = ref('');
-const checked2 = ref('');
 
 const handleMenuClick = e => {
   console.log('click', e);
@@ -54,7 +56,12 @@ const handleMenuClick = e => {
   flex-grow: 1;
 }
 
-
+.color {
+  background: rgb(76, 84, 129);
+}
+.space {
+  margin-right: 20px;
+}
 
 .avatar {
   flex-grow: 6;
@@ -62,6 +69,5 @@ const handleMenuClick = e => {
 
 .barra {
   display: flex;
-  
 }
 </style>

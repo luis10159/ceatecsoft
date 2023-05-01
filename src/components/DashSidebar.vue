@@ -1,15 +1,15 @@
 <template>
-  <a-layout-sider v-model:collapsed="collapsed" collapsible style="background: #fff">
-      <div class="logo">Logo Ceatec Soft</div>
-      <a-menu v-model:selectedKeys="selectedKeys" mode="inline">
+  <a-layout-sider v-model:collapsed="collapsed" collapsible>
+      <h2 class="logo"><a-typography-text strong>Ceatec Soft</a-typography-text></h2>
+      <a-menu v-model:selectedKeys="selectedKeys" mode="inline" theme="dark">
         <a-sub-menu key="sub1">
           <template #title>
             <span>
               <user-outlined />
-              <span>Tabla</span>
+             <span strong>Tabla</span>
             </span>
           </template>
-          <a-menu-item key="1"><edit-outlined /> Plan cobtable</a-menu-item>
+          <a-menu-item key="1"><edit-outlined /> Plan contable</a-menu-item>
           <a-menu-item key="2"><check-square-outlined /> Grupos contables</a-menu-item>
           <a-menu-item key="3"><check-square-outlined /> Dptp. Empresarial</a-menu-item>
           <a-menu-item key="4"><check-square-outlined /> Centro de costos</a-menu-item>
@@ -19,7 +19,7 @@
           <template #title>
             <span>
               <user-outlined />
-              <span>Tabla General</span>
+              <span strong>Tabla General</span>
             </span>
           </template>
           <a-menu-item key="10"><check-square-outlined /> Tipo de documento</a-menu-item>
@@ -31,7 +31,7 @@
           <template #title>
             <span>
               <user-outlined />
-              <span>Reportes</span>
+              <span strong>Reportes</span>
             </span>
           </template>
           <a-menu-item key="20"><check-square-outlined /> Diario simplificado</a-menu-item>
@@ -44,7 +44,7 @@
           <template #title>
             <span>
               <user-outlined />
-              <span>Herramientas</span>
+              <span strong>Herramientas</span>
             </span>
           </template>
           <a-menu-item key="30"><check-square-outlined /> Parametros</a-menu-item>
@@ -56,7 +56,7 @@
           <template #title>
             <span>
               <user-outlined />
-              <span>Empresa</span>
+              <span strong>Empresa</span>
             </span>
           </template>
           <a-menu-item key="40">Inicializar el sistema</a-menu-item>
@@ -85,12 +85,11 @@ const selectedKeys = ref(["1"]);
 
 <style lang="scss" scoped>
 .logo {
-  height: 32px;
+  min-height: 32px;
   margin: 16px;
   background: rgba(255, 255, 255, 0.3);
   text-align: center;
+  border-radius: 15px;
 }
-a-layout-sider {
-  background: #fff;
-}
+
 </style>
