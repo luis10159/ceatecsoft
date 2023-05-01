@@ -33,7 +33,7 @@
           </a-input-password>
         </a-form-item>
         <a-form-item label="Plataforma" name="platform">
-          <a-select  placeholder="Por favor, seleccione la platafroma" v-model:value="formState.platform">
+          <a-select placeholder="Seleccione la platafroma" v-model:value="formState.platform">
             <a-select-option value="plataformaa" >Plataforma a</a-select-option>
             <a-select-option value="plataforma">Plataforma b</a-select-option>
           </a-select>
@@ -103,7 +103,7 @@ const disabled = computed(() => {
 .login-form {
   padding: 18px;
   border-radius: 10px;
-  background-color: #ebeef57e;
+  background-color: #fcfdff98;
 }
 
 .login-form-forgot {
