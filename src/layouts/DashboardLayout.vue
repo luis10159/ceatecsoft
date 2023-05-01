@@ -1,6 +1,6 @@
 <template>
-
-    <a-layout style="min-height: 100vh">
+<article>
+    <a-layout class="layout">
         <dashsidebar></dashsidebar>
         <a-layout>
             <dashheader></dashheader>
@@ -9,7 +9,7 @@
                     <a-breadcrumb-item>Inicio</a-breadcrumb-item>
                     <a-breadcrumb-item>tabla</a-breadcrumb-item>
                 </a-breadcrumb>
-                <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
+                <div :style="{ padding: '24px', background: '#dae6e9', minHeight: '360px', borderRadius: '15px' }">
 
                     <router-view></router-view>
                 </div>
@@ -17,17 +17,20 @@
             <dashfooter></dashfooter>
         </a-layout>
     </a-layout>
+</article>
 </template>
   
 <script setup>
-import {
-    UserOutlined,
 
-} from "@ant-design/icons-vue";
 import { defineAsyncComponent } from "vue";
 const dashsidebar = defineAsyncComponent(() => import('@/components/DashSideBar.vue'));
 const dashheader = defineAsyncComponent(() => import('@/components/DashHeader.vue'));
 const dashfooter = defineAsyncComponent(() => import('@/components/DashFooter.vue'));
 </script>
-  
+  <style lang="scss" scoped>
+.layout {
+    background: linear-gradient(to right, #009fde, #5900ffb0);
+    min-height: 100vh;
+}
+</style>
   
